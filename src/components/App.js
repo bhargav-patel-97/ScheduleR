@@ -1,4 +1,5 @@
 import React from 'react';
+import AddAppoinments from './AddAppointments';
 import '../css/App.css';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <div className="row">
         <div className="col-md-12 bg-white">
           <div className="container">
-            <div>Add Appointments</div>
+            <AddAppoinments />
             <div>Search Appointments</div>
             <div>List Appointments</div>
           </div>
