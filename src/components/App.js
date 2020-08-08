@@ -4,6 +4,8 @@ import SearchAppointments from './SearchAppointments';
 import ListAppointments from './ListAppointments';
 import '../css/App.css';
 
+import { without } from 'lodash';
+
 class App extends Component {
   constructor() {
     super();
@@ -28,6 +30,14 @@ class App extends Component {
       });
   }
 
+  deleteAppointment = (appointment) => {
+    let ogAppointments = this.state.myAppointments;
+    ogAppointments = without(ogAppointments, appointment);
+    this.setState({
+      myAppointments: ogAppointments
+    });
+  }
+
   render () {
     return (
       <main className="page bg-white" id="petratings">
@@ -37,7 +47,7 @@ class App extends Component {
             <div className="container">
               <AddAppoinments />
               <SearchAppointments />
-              <ListAppointments appointments={this.state.myAppointments}/>
+              <ListAppointments appointments={this.state.myAppointments} deleteAppointment={this.deleteAppointment}/>
             </div>
           </div>
         </div>
