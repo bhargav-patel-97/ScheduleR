@@ -4,7 +4,6 @@ import Moment from 'react-moment';
 
 class ListAppointments extends Component {
     render() {
-        const dateFormat = "D MMM h:mma";
         return (                        
             <div className="appointment-list item-list mb-3">
                 {this.props.appointments.map(item => (
@@ -23,7 +22,7 @@ class ListAppointments extends Component {
                                     <Moment 
                                         date={item.aptDate}
                                         parse="YYYY-MM-dd hh:mm"
-                                        format={dateFormat}
+                                        format="DD MMM h:mma"
                                     />
                                 </span>
                             </div>
