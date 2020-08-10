@@ -87,7 +87,6 @@ class App extends Component {
     if(this.state.orderDir === 'asc') {
       order = 1;
     } else {
-      this.state.orderDir = 'dsc'
       order = -1;
     }
 
